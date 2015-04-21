@@ -22,6 +22,8 @@ void ReadCacheFile(fstream&, vector<string>*);
 void InitStructs(int, struct sockaddr_in*, char***);
 string PrintInfo(char[][1024] , int);
 void GetServerIP(string&, sockaddr_in*);
+extern void Filter(char[][1024]);
+extern bool Filter(string);
 
 
 int
@@ -86,12 +88,13 @@ ProxyHandle(char **server_ip) {
         cout << interface_messages[NEW_CONNECT] << client_socket << endl;
 
         recv(client_socket, buffer, BUF_SIZE, 0);                                                   //----Print client request
-        if(strstr(buffer, "quit") != NULL) {
-            break;
-        }
         for(; buffer[iterator] != '\0'; iterator++) {
         }
+
         file_name = PrintInfo(&buffer, iterator);
+        if(Filter(file_name)) {                                                          //----Check for blocked content
+            file_name = "blocked_site.html";
+        }
 
         try {
             file_stream.open(file_name, ios::in);                                         //----Try to grab file from cache
@@ -129,6 +132,8 @@ ProxyHandle(char **server_ip) {
                 while(message_size > 0) {
                     memset(buffer, '\0', BUF_SIZE);
                     message_size = recv(server_socket, buffer, BUF_SIZE, 0);
+
+                    Filter(&buffer);                                                                    //----Filter bad words
 
                     local_file_stream.write(buffer, message_size);                                      //----Cache site
                     send(client_socket, buffer, message_size, 0);                                       //----Send site to client

@@ -9,7 +9,7 @@
  *              device that knows the IP address of the computer this program
  *              is executed on.
  */
-#include <algorithms>
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <iterator>

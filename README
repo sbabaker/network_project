@@ -1,0 +1,4 @@
+Program Constraints
+-------------------
+The bad word filter is case sensitive. If there are variations of the same
+word, then they must be manually entered into the inapLang.txt file.
