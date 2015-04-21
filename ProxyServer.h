@@ -27,20 +27,13 @@
 //----
 using namespace std;
 //----
-enum message_type {
-    BOOT_ERR,
-    MENU_MSG,
-    NEW_CONNECT,
-    QUIT_MSG,
-};
-string interface_messages[] = {
-    "Usage : \"./ProxyServer server_ip\"",
-    "Ready to serve...",
-    "Received a connection from: ",
-    "Exiting program. Goodbye!\n",
-};
+#ifndef PROXY_H
+#define PROXY_H
+
 struct IOException : exception {
     const char* what() const noexcept {
         return "io_error";
     }
 };
+
+#endif

@@ -35,7 +35,7 @@ main(int argc, char** argv) {
 
     memset(server_ip, '\0', 17);
     if(argc < 2) {
-        cout << interface_messages[BOOT_ERR] << endl;
+        cout << "Usage : \"./ProxyServer server_ip\"" << endl;
         return 1;
     }
     else {
@@ -82,10 +82,10 @@ ProxyHandle(char **server_ip) {
     listen(proxy_socket, 5);
 
     while(1) {
-        cout << interface_messages[MENU_MSG] << endl;
+        cout << "Ready to serve..." << endl;
 
     	client_socket = accept(proxy_socket, (struct sockaddr *)&addr_client, &address_size);       //----Get request from client
-        cout << interface_messages[NEW_CONNECT] << client_socket << endl;
+        cout << "Received a connection from: " << client_socket << endl;
 
         recv(client_socket, buffer, BUF_SIZE, 0);                                                   //----Print client request
         for(; buffer[iterator] != '\0'; iterator++) {
