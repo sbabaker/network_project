@@ -30,6 +30,11 @@ Filter(char buffer[][1024]) {
                 if(buffer) {
                     memset(buffer_ptr, '*', line.size());
                 }
+				transform(line.begin(), line.end(), line.begin(), ::tolower);         //----changes the string in line to all lowercase
+				buffer_ptr = strstr(buffer_ptr, line.c_str());
+				if (buffer) {
+					memset(buffer_ptr, '*', line.size());
+				}
             }
         }
 
