@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لا شيناتا — متجر سلة (معاينة)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lachinata-salla-arabic.css">
+
+  <style>
+    /* Demo-only: placeholder image backgrounds using CSS */
+    .hero-bg {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+    }
+    .panel-1-bg { background: linear-gradient(135deg, #2c1810 0%, #5a3020 60%, #8b4513 100%); }
+    .panel-2-bg { background: linear-gradient(135deg, #1a2f1a 0%, #2d5a2d 60%, #3d7a3d 100%); }
+    .showcase-bg { background: linear-gradient(160deg, #f0ebe3 0%, #e8d8c4 100%); }
+    .showcase-img-bg { background: linear-gradient(135deg, #c9a96e 0%, #8b6914 60%, #5d4a1e 100%); }
+    .demo-product-img { background: linear-gradient(135deg, #f5f0e8 0%, #e8d8c0 100%); }
+    .demo-product-img-2 { background: linear-gradient(135deg, #e8f0e8 0%, #c0d8c0 100%); }
+    .demo-product-img-3 { background: linear-gradient(135deg, #f0e8e8 0%, #d8c0c0 100%); }
+    .demo-product-img-4 { background: linear-gradient(135deg, #e8e8f0 0%, #c0c0d8 100%); }
+    .newsletter-img-bg { background: linear-gradient(135deg, #1a0a00 0%, #4a2010 60%, #8b4513 100%); }
+
+    /* Placeholder product image */
+    .product-placeholder {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    /* Demo label */
+    .demo-notice {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      font-family: 'Cairo', sans-serif;
+    }
+    .demo-notice span { color: #D98664; font-weight: 700; }
+
+    /* Logo text placeholder */
+    .logo-text {
+      font-family: 'Cairo', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #D91F27;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Hamburger icon for mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #0e0c1b;
+    }
+    @media (max-width: 689px) {
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     DEMO NOTICE
+═══════════════════════════════════════════════════════ -->
+<div class="demo-notice">
+  معاينة تجريبية — <span>لا شيناتا على سلة</span> — هذه الصفحة تعرض تصميم المتجر بدون صور حقيقية
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ANNOUNCEMENT BAR
+═══════════════════════════════════════════════════════ -->
+<div class="announcement-bar">
+  🌿 شحن مجاني للطلبات التي تتجاوز 200 ريال داخل المملكة العربية السعودية &nbsp;|&nbsp; <a href="#">تسوق الآن</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════ -->
+<header class="s-header" id="header">
+
+  <!-- Top Row: socials + links -->
+  <div class="s-header__top-row">
+    <div class="lc-container">
+      <div class="header-socials">
+        <!-- Instagram -->
+        <a href="#" aria-label="انستغرام">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <!-- Facebook -->
+        <a href="#" aria-label="فيسبوك">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- TikTok -->
+        <a href="#" aria-label="تيك توك">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+      <div style="display:flex; gap:20px; font-size:13px;">
+        <a href="#" style="color:#6e6d76;">تواصل معنا</a>
+        <a href="#" style="color:#6e6d76;">تتبع طلبك</a>
+        <a href="#" style="color:#6e6d76;">العربية</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Row: nav + logo + actions -->
+  <div class="s-header__middle-row">
+    <div class="lc-container">
+
+      <!-- Navigation (RTL: appears on right) -->
+      <nav class="s-header__nav main-nav">
+        <ul>
+          <li><a href="#" class="active">الرئيسية</a></li>
+          <li><a href="#">زيوت الزيتون</a></li>
+          <li><a href="#">مستحضرات التجميل</a></li>
+          <li><a href="#">منتجات الطعام</a></li>
+          <li><a href="#">العروض</a></li>
+          <li><a href="#">من نحن</a></li>
+        </ul>
+      </nav>
+
+      <!-- Logo (center) -->
+      <div class="s-header__logo logo-wrapper">
+        <span class="logo-text">La Chinata</span>
+      </div>
+
+      <!-- Actions (RTL: appears on left) -->
+      <div class="s-header__actions header-actions">
+        <button class="action-btn icon-btn" aria-label="بحث">
+          <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <button class="action-btn icon-btn" aria-label="المفضلة">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </button>
+        <button class="action-btn icon-btn" style="position:relative;" aria-label="سلة التسوق">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="2" fill="none"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <span class="cart-count">٣</span>
+        </button>
+        <div class="hamburger" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Row: promo bar -->
+  <div class="s-header__bottom-row header-announcement">
+    🚚 &nbsp; شحن مجاني للطلبات فوق 200 ريال &nbsp;|&nbsp; توصيل خلال 2-4 أيام عمل &nbsp;|&nbsp; إرجاع مجاني خلال 30 يوم
+  </div>
+
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="s-hero hero-section hero-bg">
+  <div class="lc-container" style="width:100%; max-width:100%; padding-inline:min(5vw, 80px);">
+    <div class="s-hero__content hero-content">
+      <span class="s-hero__tag hero-tag">منذ عام 1932</span>
+      <h1 class="s-hero__title hero-title">
+        الأصالة الإسبانية<br>في كل قطرة
+      </h1>
+      <p class="s-hero__subtitle hero-subtitle">
+        زيوت الزيتون البكر الممتاز ومستحضرات العناية الطبيعية<br>
+        من قلب أندلوسيا إلى مائدتك وبشرتك
+      </p>
+      <div class="s-hero__buttons hero-buttons">
+        <a href="#products" class="btn-primary lc-btn">تسوق الآن</a>
+        <a href="#about" class="btn-outline lc-btn-outline">اكتشف القصة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BRAND PANELS (50/50 split)
+═══════════════════════════════════════════════════════ -->
+<section class="brand-panels lc-split-panels">
+
+  <!-- Panel 1: Food Products -->
+  <div class="brand-panel lc-panel panel-1-bg">
+    <div class="brand-panel__content lc-panel__content">
+      <span class="brand-panel__tag lc-panel__tag">منتجات الطعام</span>
+      <h2 class="brand-panel__title lc-panel__title">زيت الزيتون البكر<br>الممتاز</h2>
+      <a href="#" class="btn-outline lc-btn-outline">اكتشف المجموعة</a>
+    </div>
+  </div>
+
+  <!-- Panel 2: Beauty Products -->
+  <div class="brand-panel lc-panel panel-2-bg">
+    <div class="brand-panel__content lc-panel__content">
+      <span class="brand-panel__tag lc-panel__tag">مستحضرات التجميل</span>
+      <h2 class="brand-panel__title lc-panel__title">العناية بالبشرة<br>بزيت الزيتون</h2>
+      <a href="#" class="btn-outline lc-btn-outline">اكتشف المجموعة</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRODUCT GRID — 4 columns
+═══════════════════════════════════════════════════════ -->
+<section id="products" style="padding: 0 min(3vw,20px); max-width:1200px; margin-inline:auto;">
+
+  <div class="section-heading lc-section-heading">
+    <span class="section-label overline">المنتجات الأكثر مبيعاً</span>
+    <h2>اختياراتنا المميزة</h2>
+    <p>منتجات طبيعية 100% مستخلصة من أجود أنواع الزيتون الأندلسي</p>
+  </div>
+
+  <div class="product-grid-4 lc-products-4">
+
+    <!-- Product 1 -->
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image demo-product-img">
+        <div class="product-placeholder">🫒</div>
+      </div>
+      <span class="sale-badge discount-badge">-20%</span>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title">
+          <a href="#">زيت الزيتون البكر الممتاز 500 مل</a>
+        </h3>
+        <div class="product-card__price s-product-card__price">
+          <del>62.00 ريال</del>
+          <ins>49.90 ريال</ins>
+          <span class="price-per-unit unit-price">100 مل | 9.98 ريال</span>
+        </div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image demo-product-img-2">
+        <div class="product-placeholder">🧴</div>
+      </div>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title">
+          <a href="#">كريم ترطيب اليدين بزيت الزيتون</a>
+        </h3>
+        <div class="product-card__price s-product-card__price">
+          <span>35.00 ريال</span>
+        </div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image demo-product-img-3">
+        <div class="product-placeholder">🫙</div>
+      </div>
+      <span class="out-of-stock-badge sold-out-badge">نفذ</span>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title">
+          <a href="#">زيتون أندلسي مخلل فاخر 300 غ</a>
+        </h3>
+        <div class="product-card__price s-product-card__price">
+          <span>28.00 ريال</span>
+          <span class="price-per-unit unit-price">100 غ | 9.33 ريال</span>
+        </div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn" style="opacity:.4;cursor:not-allowed;">نفد من المخزون</a>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image demo-product-img-4">
+        <div class="product-placeholder">🧼</div>
+      </div>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title">
+          <a href="#">صابون طبيعي بزيت الزيتون والعسل</a>
+        </h3>
+        <div class="product-card__price s-product-card__price">
+          <span>18.00 ريال</span>
+        </div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-bottom:100px;">
+    <a href="#" class="btn-primary lc-btn">عرض جميع المنتجات</a>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FEATURED PRODUCT SHOWCASE
+═══════════════════════════════════════════════════════ -->
+<section style="padding: 0 min(3vw,20px); max-width:1200px; margin-inline:auto;">
+  <div class="lc-showcase featured-product-section">
+
+    <!-- Left: text block -->
+    <div class="lc-showcase__left featured-left showcase-bg">
+      <span class="logo-text" style="font-size:18px; margin-bottom:30px;">La Chinata</span>
+      <p class="lc-showcase__text">
+        منذ عام 1932، تُقدّم لا شيناتا أفضل ما أنتجته أرض إكستريمادورا الأسبانية من ذهب سائل.
+        زيوتنا تُعصر على البارد في أقل من 24 ساعة من الحصاد للحفاظ على نقاء الطعم وثراء الفوائد.
+      </p>
+      <div style="display:flex; gap:40px; margin-bottom:32px;">
+        <div>
+          <div style="font-size:28px; font-weight:900; color:#D91F27;">+90</div>
+          <div style="font-size:13px; color:#6e6d76;">عاماً من الخبرة</div>
+        </div>
+        <div>
+          <div style="font-size:28px; font-weight:900; color:#D91F27;">40+</div>
+          <div style="font-size:13px; color:#6e6d76;">دولة حول العالم</div>
+        </div>
+        <div>
+          <div style="font-size:28px; font-weight:900; color:#D91F27;">15+</div>
+          <div style="font-size:13px; color:#6e6d76;">جائزة دولية</div>
+        </div>
+      </div>
+      <a href="#" class="btn-primary lc-btn">اكتشف تشكيلة زيوت الزيتون</a>
+    </div>
+
+    <!-- Right: image placeholder -->
+    <div class="lc-showcase__right featured-right showcase-img-bg" style="display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center; color:rgba(255,255,255,0.6);">
+        <div style="font-size:80px; margin-bottom:16px;">🫒</div>
+        <div style="font-size:16px; font-family:'Cairo',sans-serif; font-weight:600;">صورة المنتج المميز</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     DARK BRAND SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="lc-dark-section brand-story-section">
+  <div class="lc-container">
+
+    <!-- Main content -->
+    <div class="lc-dark-section__content">
+      <h2 class="lc-dark-section__title">
+        الطبيعة في<br>أنقى صورها
+      </h2>
+      <p class="lc-dark-section__text">
+        منتجاتنا مصنوعة بعناية من أجود المكونات الطبيعية،
+        خالية من المواد الحافظة والمواد الصناعية. كل زجاجة
+        تحمل في طياتها شغف الحرفيين وأمانة الأرض.
+      </p>
+      <a href="#" class="btn-gold-outline lc-btn-gold">اعرف قصتنا</a>
+    </div>
+
+    <!-- Feature columns -->
+    <div class="lc-features-row feature-points">
+
+      <div class="lc-feature-col feature-col">
+        <h4>🌿 100% طبيعي</h4>
+        <p>جميع مكوناتنا مستخلصة من الطبيعة دون أي إضافات كيميائية أو مواد حافظة صناعية.</p>
+      </div>
+
+      <div class="lc-feature-col feature-col">
+        <h4>🏆 جودة معتمدة</h4>
+        <p>حاصلون على أكثر من 15 جائزة دولية للجودة، ومعتمدون من كبرى الجهات الغذائية الأوروبية.</p>
+      </div>
+
+      <div class="lc-feature-col feature-col">
+        <h4>🌍 إنتاج مستدام</h4>
+        <p>نلتزم بالزراعة المستدامة وحماية البيئة في كل مراحل الإنتاج من البستان إلى الزجاجة.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SECOND PRODUCT GRID — 3 columns (Beauty)
+═══════════════════════════════════════════════════════ -->
+<section style="padding: 0 min(3vw,20px); max-width:1200px; margin-inline:auto;">
+
+  <div class="section-heading lc-section-heading">
+    <span class="section-label overline">العناية الطبيعية</span>
+    <h2>مستحضرات التجميل</h2>
+    <p>استمتعي ببشرة متوهجة مع تشكيلتنا الفاخرة من منتجات العناية بزيت الزيتون</p>
+  </div>
+
+  <div class="product-grid-3 lc-products-3">
+
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image" style="background:linear-gradient(135deg,#f5e6d3,#e8c9a0); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:56px;">🧴</div>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title"><a href="#">سيروم العناية بالوجه المكثف</a></h3>
+        <div class="product-card__price s-product-card__price"><span>89.00 ريال</span></div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image" style="background:linear-gradient(135deg,#d3e6f5,#a0c9e8); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:56px;">🫧</div>
+      <span class="sale-badge discount-badge">جديد</span>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title"><a href="#">غسول بشرة لطيف بالزيتون والعسل</a></h3>
+        <div class="product-card__price s-product-card__price"><span>45.00 ريال</span></div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+    <div class="product-card s-product-card">
+      <div class="product-card__image s-product-card__image" style="background:linear-gradient(135deg,#e6d3f5,#c9a0e8); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; font-size:56px;">💆</div>
+      <div class="product-card__body s-product-card__body">
+        <h3 class="product-card__title s-product-card__title"><a href="#">زيت تدليك الجسم المرطب الفاخر</a></h3>
+        <div class="product-card__price s-product-card__price">
+          <del>75.00 ريال</del>
+          <ins>59.90 ريال</ins>
+        </div>
+        <a href="#" class="s-product-card__add-to-cart add-to-cart-btn">أضف للسلة</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     NEWSLETTER SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="lc-newsletter newsletter-section">
+  <div class="lc-container" style="max-width:100%; padding:0;">
+
+    <!-- Text column -->
+    <div class="lc-newsletter__text newsletter-text">
+      <span class="section-label overline" style="color:#D98664;">النشرة البريدية</span>
+      <h2 class="lc-newsletter__title">احصل على عروض حصرية وأخبار لا شيناتا</h2>
+      <p class="lc-newsletter__description">
+        اشترك في نشرتنا البريدية لتحصل على أحدث العروض والوصفات
+        ونصائح العناية الطبيعية مباشرة في بريدك الإلكتروني.
+      </p>
+      <form class="lc-newsletter__form newsletter-form">
+        <input type="text" placeholder="الاسم الكامل">
+        <input type="email" placeholder="البريد الإلكتروني">
+        <div class="lc-newsletter__privacy">
+          <input type="checkbox" id="privacy">
+          <label for="privacy">أوافق على <a href="#">سياسة الخصوصية</a> وأحكام الاستخدام</label>
+        </div>
+        <button type="submit">اشترك الآن</button>
+      </form>
+    </div>
+
+    <!-- Image column -->
+    <div class="lc-newsletter__image newsletter-image newsletter-img-bg" style="display:flex; align-items:center; justify-content:center;">
+      <div style="text-align:center; color:rgba(255,255,255,0.5);">
+        <div style="font-size:80px;">🫒</div>
+        <div style="font-family:'Cairo',sans-serif; font-size:15px; margin-top:12px;">صورة العرض</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="s-footer" id="footer">
+
+  <!-- Footer announcement bar -->
+  <div class="s-footer__top-bar footer-announcement">
+    ⭐ أكثر من 50,000 عميل راضٍ في المملكة العربية السعودية &nbsp;|&nbsp; تقييم 4.9 / 5
+  </div>
+
+  <!-- Footer Grid -->
+  <div class="lc-container">
+    <div class="s-footer__grid footer-grid">
+
+      <!-- Brand Column -->
+      <div class="footer-brand s-footer__col footer-col">
+        <span class="logo-text" style="font-size:20px;">La Chinata</span>
+        <p>منذ عام 1932، نُقدّم لكم أفضل ما أنتجته أرض إكستريمادورا الإسبانية من منتجات طبيعية فاخرة. التزامنا بالجودة لا يتغير.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="انستغرام">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="فيسبوك">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="تويتر">
+            <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div class="s-footer__col footer-col">
+        <h5>روابط سريعة</h5>
+        <ul>
+          <li><a href="#">زيوت الزيتون</a></li>
+          <li><a href="#">مستحضرات التجميل</a></li>
+          <li><a href="#">منتجات الطعام</a></li>
+          <li><a href="#">هدايا فاخرة</a></li>
+          <li><a href="#">العروض والخصومات</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2 -->
+      <div class="s-footer__col footer-col">
+        <h5>خدمة العملاء</h5>
+        <ul>
+          <li><a href="#">تتبع طلبك</a></li>
+          <li><a href="#">سياسة الإرجاع</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="s-footer__col footer-col">
+        <h5>تواصل معنا</h5>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <div>
+            <span class="footer-contact-label">هاتف</span>
+            <span class="footer-contact-value"><a href="tel:+966500000000">+966 50 000 0000</a></span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" fill="none"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <div>
+            <span class="footer-contact-label">البريد الإلكتروني</span>
+            <span class="footer-contact-value"><a href="mailto:info@lachinata-sa.com">info@lachinata-sa.com</a></span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <div>
+            <span class="footer-contact-label">العنوان</span>
+            <span class="footer-contact-value">الرياض، المملكة العربية السعودية</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© 2024 لا شيناتا المملكة العربية السعودية. جميع الحقوق محفوظة.</p>
+      <div class="payment-icons" style="display:flex; gap:10px; align-items:center; font-size:13px; color:#6e6d76;">
+        <span style="border:1px solid #ddd; padding:4px 10px; border-radius:4px;">مدى</span>
+        <span style="border:1px solid #ddd; padding:4px 10px; border-radius:4px;">Visa</span>
+        <span style="border:1px solid #ddd; padding:4px 10px; border-radius:4px;">Mastercard</span>
+        <span style="border:1px solid #ddd; padding:4px 10px; border-radius:4px;">Apple Pay</span>
+        <span style="border:1px solid #ddd; padding:4px 10px; border-radius:4px;">STC Pay</span>
+      </div>
+      <p>مدعوم بـ <strong>Salla</strong></p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
